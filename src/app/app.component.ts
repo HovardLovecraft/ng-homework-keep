@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Note } from './interfaces/note';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ng-homework-keep';
+  appTitle = 'ngKeep'
+
+  public notesArr: Note[]  = [
+    {
+      id: 1,
+      title: 'first note',
+      description: 'this is a first note',
+      isDone: false,
+      isArchived: false
+    },
+    {
+      id: 2,
+      title: 'Second note',
+      description: 'this is a second note',
+      isDone: true,
+      isArchived: false
+    }
+  ]
 }
