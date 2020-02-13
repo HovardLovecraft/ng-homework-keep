@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Note } from 'src/app/interfaces/note';
+import { Component, OnInit} from '@angular/core';
+import { NoteListService } from 'src/app/services/note-list.service';
 
 @Component({
   selector: 'app-note-list',
@@ -8,11 +8,20 @@ import { Note } from 'src/app/interfaces/note';
 })
 export class NoteListComponent implements OnInit {
 
-  @Input() notesArr: Note[] = []
 
-  constructor() { }
+
+  constructor( private noteListService: NoteListService) { }
 
   ngOnInit() {
+    
+  }
+
+  onChange(id: number) {
+    this.noteListService.onToggle(id)
+  }
+
+  removeNote(id: number) {
+    this.noteListService.removeNote(id)
   }
 
 }
