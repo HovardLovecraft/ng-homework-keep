@@ -25,6 +25,10 @@ export class NoteListService {
         this.notesArr[index].isDone = !this.notesArr[index].isDone
     }
 
+    addNote(note: Note) {
+        this.notesArr.push(note)
+    }
+
     removeNote(id: number) {
         this.notesArr = this.notesArr.filter( note => note.id !== id)
     }
