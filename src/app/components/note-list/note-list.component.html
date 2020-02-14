@@ -1,5 +1,7 @@
 <p>note-list-component works</p>
-<ul>
+
+<div *ngIf="!loading">
+<ul *ngIf="noteListService.notesArr.length; else noNotes">
     <li *ngFor="let note of noteListService.notesArr; let i = index">
         <span [class.done] ="note.isDone">   
             <input type="checkbox" [checked]="note.isDone" (change)="onChange(note.id)">     
@@ -10,3 +12,9 @@
         <button class="rm" (click)="removeNote(note.id)">&times;</button>
     </li>
 </ul>
+
+<ng-template #noNotes>
+    <p style="text-align: center;">There is no notes</p>
+</ng-template>
+</div>
+<p *ngIf="loading">loading</p>
