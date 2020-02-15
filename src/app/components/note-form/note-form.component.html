@@ -3,6 +3,7 @@
         type="text"
         placeholder="Add Note Title"
         [(ngModel)]="title"
+        (keydown.enter)="addNote()"
     >
-    <button (click)="addNote()">Add Todo </button>
+    <button (click)="addNote()">Add Note </button>
 </div>

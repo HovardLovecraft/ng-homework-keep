@@ -7,6 +7,7 @@ import { NoteComponent } from './components/note/note.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NoteFormComponent } from './components/note-form/note-form.component';
 import { FormsModule } from '@angular/forms'
+import { NoteFilterPipe } from './note-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { FormsModule } from '@angular/forms'
     NoteListComponent,
     NoteComponent,
     NoteFormComponent,
+    NoteFilterPipe
     
   ],
   imports: [

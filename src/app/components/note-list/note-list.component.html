@@ -1,12 +1,20 @@
-<p>note-list-component works</p>
+
+
+<div class="filter">
+    <input 
+        type="text"
+        placeholder="filter by title"
+        [(ngModel)]="searchString">
+        
+</div>
 
 <div *ngIf="!loading">
 <ul *ngIf="noteListService.notesArr.length; else noNotes">
-    <li *ngFor="let note of noteListService.notesArr; let i = index">
+    <li *ngFor="let note of noteListService.notesArr | noteFilter:searchString; let i = index">
         <span [class.done] ="note.isDone">   
             <input type="checkbox" [checked]="note.isDone" (change)="onChange(note.id)">     
             <strong>{{i + 1}}</strong>
-            {{note.title + ' ' + note.description}}
+            {{note.title}}
         </span>
 
         <button class="rm" (click)="removeNote(note.id)">&times;</button>

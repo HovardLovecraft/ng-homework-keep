@@ -10,7 +10,8 @@ import { delay } from 'rxjs/operators';
 export class NoteListComponent implements OnInit {
 
   private loading: boolean = true;
-
+  private searchString: string = ''
+  
   constructor( private noteListService: NoteListService) { }
 
   ngOnInit() {
